@@ -33,6 +33,16 @@ de las víctimas a través del atacante.
 - Privilegios root
 
 ---
+## Topologia de red
+<img width="499" height="341" alt="image" src="https://github.com/user-attachments/assets/adc42bdd-5ba2-45ca-b9f2-1de22500e095" />
+
+| Dispositivo | Interfaz | IP |
+|---|---|---|
+| Ubuntu-Atacante | ens3 | 192.168.67.50/24 |
+| SW-Core | e0/0 - e0/1 | — |
+| Linux-Victima | ens3 | DHCP (víctima) |
+
+
 
 ## Funcionamiento del Script
 
