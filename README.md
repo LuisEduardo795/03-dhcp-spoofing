@@ -117,4 +117,6 @@ show ip dhcp snooping binding
 show ip dhcp snooping statistics
 ```
 
+## Video demostrativo
+https://youtu.be/1fpLilIbIX4
 ---
